@@ -92,6 +92,19 @@ export const LoginForm = () => {
         >
           log in
         </button>
+        <button
+          style={{ marginTop: '-20px' }}
+          className={styles.submitButton}
+          type="submit"
+          disabled={isLoading}
+          onClick={() => {
+            dispatch(
+              logIn({ email: 'unicorn@gmail.com', password: 'unicorn' })
+            );
+          }}
+        >
+          demo user
+        </button>
         <NavLink className={styles.loginLink} to="/register">
           register
         </NavLink>
