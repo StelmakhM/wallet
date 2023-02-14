@@ -34,7 +34,6 @@ export const TableFilters = () => {
   useEffect(() => {
     async function updateTransactionForPeriod() {
       try {
-        // fetch all data from request
         await dispatch(
           getSummary({ month: date.month, year: date.year })
         ).unwrap();

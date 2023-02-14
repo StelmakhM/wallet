@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import PulseLoader from 'react-spinners/PulseLoader';
 import useResize from '../../hooks/useResize';
 import s from './Balance.module.scss';
 
@@ -16,7 +17,18 @@ export const Balance = () => {
     <div className={s.container}>
       <p className={s.text}>YOUR BALANCE</p>
       <p className={s.balance}>
-        ₴ <span>{balance.toFixed(2)}</span>
+        ₴{' '}
+        <span>
+          {balance === null ? (
+            <PulseLoader
+              color="#4A56E2"
+              size={15}
+              aria-label="Loading Spinner"
+            />
+          ) : (
+            balance.toFixed(2)
+          )}
+        </span>
       </p>
     </div>
   );

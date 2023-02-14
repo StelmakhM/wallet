@@ -1,18 +1,18 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { closeModal } from 'redux/global/globalSlice';
 import { selectCategories } from 'redux/selectors';
-import css from './ModalAddTransaction.module.scss';
 import * as yup from 'yup';
-import 'react-datetime/css/react-datetime.css';
 import { SelectField } from './SelectField';
 import {
   createTransaction,
   editTransaction,
   getCategories,
 } from 'redux/finance/financeOperations';
+import 'react-datetime/css/react-datetime.css';
+import css from './ModalAddTransaction.module.scss';
 
 export const ModalAddTransaction = ({ transaction, closeEditModal }) => {
   const dispatch = useDispatch();
@@ -38,10 +38,6 @@ export const ModalAddTransaction = ({ transaction, closeEditModal }) => {
     }
   }, []);
 
-  useEffect(() => {
-    dispatch(getCategories());
-  }, [dispatch]);
-
   const categoriesList = useSelector(selectCategories);
 
   let newCategoriesList = [];
@@ -51,18 +47,6 @@ export const ModalAddTransaction = ({ transaction, closeEditModal }) => {
       label: i.name,
       value: i.id,
     });
-  };
-
-  const showCategoriesList = () => {
-    return categoriesList
-      .filter(item => item.name !== 'Income')
-      .map(item => {
-        return (
-          <option key={item.id} value={item.id}>
-            {item.name}
-          </option>
-        );
-      });
   };
 
   const getParseNewDate = () => {
@@ -77,7 +61,7 @@ export const ModalAddTransaction = ({ transaction, closeEditModal }) => {
     return output;
   };
 
-  let patternTwoDigisAfterComma = /^\d+(\.\d{0,2})?$/;
+  let patternTwoDigiTsAfterComma = /^\d+(\.\d{0,2})?$/;
   const commonStringValidator = yup
     .number()
     .positive()
@@ -86,7 +70,7 @@ export const ModalAddTransaction = ({ transaction, closeEditModal }) => {
       'The amount should be a decimal with maximum two digits after comma',
       val => {
         if (val !== undefined) {
-          return patternTwoDigisAfterComma.test(val);
+          return patternTwoDigiTsAfterComma.test(val);
         }
         return true;
       }
@@ -101,6 +85,7 @@ export const ModalAddTransaction = ({ transaction, closeEditModal }) => {
   });
 
   const handleSubmit = values => {
+    dispatch(closeModal());
     closeEditModal && closeEditModal();
 
     const id = transaction?.id;
@@ -123,10 +108,6 @@ export const ModalAddTransaction = ({ transaction, closeEditModal }) => {
       ? transaction?.amount * -1
       : transaction?.amount;
 
-  const defaultCategory = categoriesList.find(
-    el => el.id === transaction?.categoryId
-  )?.name;
-
   return createPortal(
     <div className={css.modalBackdrop} id="modalBackdrop" onClick={clickOnBackdropHandler}>
       <section className={css.modalSection} id="myModal">
@@ -140,7 +121,7 @@ export const ModalAddTransaction = ({ transaction, closeEditModal }) => {
         <Formik
           initialValues={{
             type: transaction?.type || 'EXPENSE',
-            categoryId: defaultCategory || '',
+            categoryId: '',
             amount: defaultAmount || '',
             transactionDate: transaction?.transactionDate || getParseNewDate(),
             comment: transaction?.comment || '',
@@ -264,6 +245,6 @@ export const ModalAddTransaction = ({ transaction, closeEditModal }) => {
       </section>
       ,
     </div>,
-    document.querySelector('#modal')
+    document.body
   );
 };

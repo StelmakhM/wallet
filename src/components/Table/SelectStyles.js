@@ -82,7 +82,7 @@ export const selectStyles = {
 
   option: (provided, { isFocused, isSelected }) => ({
     ...provided,
-    background: isFocused || isSelected ? '#ffffff' : '#fff',
+    background: isFocused || isSelected ? '#e9e9e9' : '#fff',
     color: isFocused || isSelected ? '#4A56E2' : '#000000',
     cursor: 'pointer',
     padding: '14px 20px',

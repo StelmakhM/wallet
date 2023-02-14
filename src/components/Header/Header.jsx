@@ -5,6 +5,7 @@ import css from './Header.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { openLogOutModal } from 'redux/global/globalSlice';
 import { ModalLogOut } from 'components/ModalLogOut/ModalLogOut';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const userName = useSelector((state) => state.session.user?.username);
@@ -15,10 +16,10 @@ export const Header = () => {
     <>
     <header className={css.header}>
       <div className={css.header__container}>
-        <div className={css.header__logo}>
+        <Link to='/home' className={css.header__logo}>
           <img src={logo} className={css.header__logo_icon}width='40' height='40' alt='logo' />
           <span className={css.header__logo_text}>Wallet</span>
-        </div>
+        </Link>
         <div className={css.header__logout}>
           <span className={css.header__username}>{userName}</span>
           <button className={css.header__logout_btn} onClick={() => dispatch(openLogOutModal())}>

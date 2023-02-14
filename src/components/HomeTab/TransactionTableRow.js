@@ -20,7 +20,7 @@ const TransactionTableRow = ({ transaction }) => {
 
   const handleDelete = () => {
     dispatch(deleteTransaction(transaction.id))
-    
+
   }
 
   return (
@@ -45,10 +45,10 @@ const TransactionTableRow = ({ transaction }) => {
         </td>
         <td className={css.tdBalance}>
           {balanceAfter ? Math.abs(balanceAfter.toFixed(2)) : 0}
-          <button onClick={() => setShowModal(true)} style={{marginLeft: '10px'}}>
+          <button onClick={() => setShowModal(true)} className={css.editBtn} style={{marginLeft: '10px'}}>
             <MdEdit color='#4a56e2' size='18' />
           </button>{' '}
-          <button onClick={handleDelete}>
+          <button onClick={handleDelete} className={css.deleteBtn}>
             <AiFillDelete color='#ff6596' size='18' />
           </button>
         </td>

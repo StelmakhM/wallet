@@ -1,8 +1,7 @@
-import Media from 'react-media';
-import { ButtonAddTransactions } from 'components/ButtonAddTransactions/ButtonAddTransactions';
-import { ModalAddTransaction } from 'components/ModalAddTransaction/ModalAddTransaction';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { ButtonAddTransactions } from 'components/ButtonAddTransactions/ButtonAddTransactions';
+import { ModalAddTransaction } from 'components/ModalAddTransaction/ModalAddTransaction';
 import {
   getCategories,
   getTransactions,
@@ -10,34 +9,34 @@ import {
 import { selectIsModalOpen } from 'redux/selectors';
 import { selectTransactions } from 'redux/selectors';
 import Pagination from './Pagination/Pagination';
-
 import MobileHomeTab from './MobileHomeTab';
-import css from './HomeTab.module.scss';
 import TransactionTableRow from './TransactionTableRow';
 import useResize from '../../hooks/useResize';
+import css from './HomeTab.module.scss';
+
+const PER_PAGE = 5;
 
 export const HomeTab = () => {
+  const dispatch = useDispatch();
   const transactions = useSelector(selectTransactions);
   const isModalOpen = useSelector(selectIsModalOpen);
 
   const windowWidth = useResize();
 
-  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTransactions());
     dispatch(getCategories());
   }, [dispatch]);
 
   const [pageNum, setPageNum] = useState(1);
-  const perPage = 7;
 
   const tranSactionToRender = () => {
     return transactions
-      .slice(pageNum * perPage - perPage, pageNum * perPage)
+      .slice(pageNum * PER_PAGE - PER_PAGE, pageNum * PER_PAGE)
       .sort((a, b) => b.transactionDate.localeCompare(a.transactionDate));
   };
 
-  const pageQtt = Math.ceil(transactions.length / Number(perPage));
+  const pageQtt = Math.ceil(transactions.length / Number(PER_PAGE));
 
   return (
     <>

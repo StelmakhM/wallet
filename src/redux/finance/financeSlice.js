@@ -11,10 +11,8 @@ import {
   getTransactions,
 } from './financeOperations';
 
-///////////////// Slice data ///////////////
-
 const initialState = {
-  totalBalance: 0,
+  totalBalance: null,
   categories: [],
   transactions: [],
   isError: false,

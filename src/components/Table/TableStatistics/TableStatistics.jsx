@@ -18,8 +18,6 @@ export const TableStatistics = () => {
           <th scope="col">Sum</th>
         </tr>
       </thead>
-      {/* <div className={s.cell}> */}
-      {/* <div className={s.hh}> */}
       <tbody className={s.bb}>
         {stats?.summary.map((el, index) => {
           return (
@@ -40,13 +38,11 @@ export const TableStatistics = () => {
           );
         })}
       </tbody>
-      {/* </div> */}
-      {/* </div> */}
       <tfoot>
         <tr>
           <th scope="row">Expenses:</th>
           <th className={s.expenses} scope="row">
-            {stats.expenseSummary ? stats.expenseSummary.toFixed(2) : 0}
+            {stats.expenseSummary ? (stats.expenseSummary * -1).toFixed(2) : 0}
           </th>
         </tr>
         <tr>

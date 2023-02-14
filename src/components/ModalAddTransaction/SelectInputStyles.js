@@ -11,12 +11,10 @@ export const selectInputStyles = {
     borderBottom: '1px solid #E0E0E0',
     borderRadius: 0,
     width: '100%',
-    // minHeight: 50,
     backgroundColor: 'transparent',
     boxShadow: 'none',
     cursor: 'pointer',
     '&:hover': {
-      // border: '1px solid #000000',
       boxShadow: 'none',
     },
   }),
@@ -30,14 +28,15 @@ export const selectInputStyles = {
   }),
   input: provided => ({
     ...provided,
+    marginBottom: '10px',
     display: 'block',
     height: 1,
-    padding: '0 0 0 10px',
     margin: 0,
   }),
-
   placeholder: provided => ({
     ...provided,
+    position: 'relative',
+    bottom: 10,
     color: '#bdbdbd',
     fontFamily: 'Circe, sans-serif',
     fontSize: 18,
@@ -47,23 +46,18 @@ export const selectInputStyles = {
     ...provided,
     color: '#000000',
     margin: 0,
+    marginBottom: '-10px',
     fontSize: 16,
+    paddingLeft: 10,
     lineHeight: 1,
     fontFamily: 'Circe, sans-serif',
   }),
   dropdownIndicator: provided => ({
     ...provided,
     color: '#000000',
-    // width: 18,
-    // height: 9,
     '&:hover': {
-      // transform: 'rotate(0.5turn)',
       color: '#000000',
     },
-    // '&:blur': {
-    //   // transform: 'rotate(0.5turn)',
-    //   color: 'orange',
-    // },
   }),
 
   menu: provided => ({
@@ -73,7 +67,6 @@ export const selectInputStyles = {
     backdropFilter: 'blur(25px)',
     borderRadius: 20,
     overflow: 'hidden',
-    // maxHeight: '157px',
   }),
 
   menuList: provided => ({
@@ -81,7 +74,6 @@ export const selectInputStyles = {
     background: 'transparent',
     borderRadius: 20,
     cursor: 'pointer',
-    // height: 280,
     maxHeight: 280,
     '::-webkit-scrollbar': {
       width: '4px',
