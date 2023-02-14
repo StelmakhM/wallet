@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/wallet/static/css/main.5015def3.css",
-    "main.js": "/wallet/static/js/main.1b81ac8a.js",
+    "main.css": "/wallet/static/css/main.6fe4bc46.css",
+    "main.js": "/wallet/static/js/main.3724e45a.js",
     "static/media/Circe-Bold.woff": "/wallet/static/media/Circe-Bold.fca9743700608e1abf6a.woff",
     "static/media/Circe-Regular.woff": "/wallet/static/media/Circe-Regular.a5168fcec068fa77220a.woff",
     "static/media/login900w.png": "/wallet/static/media/login900w.efaffd03a70764c641f1.png",
@@ -20,20 +20,20 @@
     "static/media/register540w.webp": "/wallet/static/media/register540w.7d5566229b7bd916961a.webp",
     "static/media/desktopBg.png": "/wallet/static/media/desktopBg.cb9f45bddeb46168a475.png",
     "static/media/tabletBg.png": "/wallet/static/media/tabletBg.3dbcddf5bc7d5a60abc7.png",
-    "static/media/sprite.svg": "/wallet/static/media/sprite.d4cc81eb54476d34814c182b197fdc47.svg",
+    "static/media/sprite.svg": "/wallet/static/media/sprite.e3742949459c30a201bf004e86db9849.svg",
     "static/media/404mobile.svg": "/wallet/static/media/404mobile.fe5265cfe5eb4b59b3e8.svg",
-    "static/media/logo.svg": "/wallet/static/media/logo.bd8c9287b2e7a6a574c41b4a0294e355.svg",
-    "static/media/btnAdd.svg": "/wallet/static/media/btnAdd.91fcd1096999aca1fbe6.svg",
+    "static/media/logo.svg": "/wallet/static/media/logo.7aa7e611acc11def491e6d21f991b890.svg",
+    "static/media/btnAdd.svg": "/wallet/static/media/btnAdd.001e1534d4d8df11520f.svg",
     "index.html": "/wallet/index.html",
-    "static/media/btnSubs.svg": "/wallet/static/media/btnSubs.3cfd53ae64c0f94a4f50.svg",
-    "static/media/wave.svg": "/wallet/static/media/wave.ef2d3a7d0f02079531f7.svg",
-    "static/media/logOut.svg": "/wallet/static/media/logOut.72d597a63da7378c799913a23184f382.svg",
-    "static/media/close.svg": "/wallet/static/media/close.5b868b8bc3976c8409dc.svg",
-    "main.5015def3.css.map": "/wallet/static/css/main.5015def3.css.map",
-    "main.1b81ac8a.js.map": "/wallet/static/js/main.1b81ac8a.js.map"
+    "static/media/btnSubs.svg": "/wallet/static/media/btnSubs.cab273e8fe2cccbdaf43.svg",
+    "static/media/wave.svg": "/wallet/static/media/wave.7cb2ffde77574bf557d5.svg",
+    "static/media/logOut.svg": "/wallet/static/media/logOut.dcd3363176363020f7b35195714fb1e2.svg",
+    "static/media/close.svg": "/wallet/static/media/close.4ca60f1813426122dabf.svg",
+    "main.6fe4bc46.css.map": "/wallet/static/css/main.6fe4bc46.css.map",
+    "main.3724e45a.js.map": "/wallet/static/js/main.3724e45a.js.map"
   },
   "entrypoints": [
-    "static/css/main.5015def3.css",
-    "static/js/main.1b81ac8a.js"
+    "static/css/main.6fe4bc46.css",
+    "static/js/main.3724e45a.js"
   ]
 }
